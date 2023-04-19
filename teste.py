@@ -1,2 +1,2 @@
-def modelo(lista, t):
-    return lista
+def modelo(lista_variaveis, t):
+    return lista_variaveis
