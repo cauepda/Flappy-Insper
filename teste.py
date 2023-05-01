@@ -1,8 +1,6 @@
-frota = {
-  "navio-tanque":[
-    [[6,1],[6,2],[6,3]]
-  ]
-}
+j = [1, 2]
 
-frota['navio-tanque'] += [[5, 5]]
-print(frota)
+for a in range(0, j[0]):
+    j[0] += 1
+
+print('oi')
