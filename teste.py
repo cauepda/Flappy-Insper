@@ -1,6 +1,5 @@
-j = [1, 2]
+linha = int(input())
 
-for a in range(0, j[0]):
-    j[0] += 1
-
-print('oi')
+while linha not in range(0, 10):
+    print('cuzao')
+    linha = int(input())
