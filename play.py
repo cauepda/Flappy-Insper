@@ -1,3 +1,5 @@
+from random import *
+seed(1)
 def define_posicoes(linha, coluna, orientacao, tamanho):
     lista_ocupacao = []
     if orientacao == 'vertical':
@@ -220,7 +222,7 @@ while jogando:
             print('Linha inválida!')
             linha_ataque = int(input('Jogador, qual linha deseja atacar? '))
 
-    coluna_ataque = int(input('Coluna de ataque: '))
+    coluna_ataque = int(input('Jogador, qual coluna deseja atacar? '))
 
     if coluna_ataque not in range(0, 10):
         while coluna_ataque not in range(0, 10):
@@ -254,8 +256,32 @@ while jogando:
 
         tabuleiro_oponente = faz_jogada(tabuleiro_oponente, linha_ataque, coluna_ataque)
 
-        navios_afundados = afundados(frota_oponente, tabuleiro_oponente)
+        navios_afundados_oponente = afundados(frota_oponente, tabuleiro_oponente)
 
-        if navios_afundados == 10:
+        if navios_afundados_oponente == 10:
             print('Parabéns! Você derrubou todos os navios do seu oponente!')
             jogando = False
+        else:
+            lista_oponente = []
+
+            linha_sorteada = randint(0, 9)
+            coluna_sorteada = randint(0, 9)
+
+            jogada = [linha_sorteada, coluna_sorteada]
+
+            if jogada in lista_oponente:
+                while jogada in lista_oponente:
+                    linha_sorteada = randint(0, 9)
+                    coluna_sorteada = randint(0, 9)
+
+                    jogada = [linha_sorteada, coluna_sorteada]
+
+            else:
+                print(f'Seu oponente está atacando na linha {linha_sorteada} e coluna {coluna_sorteada}')
+
+            tabuleiro_jogador = faz_jogada(tabuleiro_jogador, linha_sorteada, coluna_sorteada)
+
+            navios_afundados_jogador = afundados(frota_jogador, tabuleiro_jogador)
+
+            if navios_afundados_jogador == 10:
+                print('Xi! O oponente derrubou toda a sua frota =(')
