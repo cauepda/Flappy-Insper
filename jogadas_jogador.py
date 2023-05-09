@@ -6,6 +6,7 @@ from posiciona_frota import posiciona_frota
 from faz_jogada import faz_jogada
 from embarcacoes_afundadas import afundados
 
+# -------------------------- funções ---------------------------------------
 def monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente):
     texto = ''
     texto += '   0  1  2  3  4  5  6  7  8  9         0  1  2  3  4  5  6  7  8  9\n'
@@ -167,6 +168,7 @@ while jogando:
 
         navios_afundados = afundados(frota_oponente, tabuleiro_oponente)
 
+        # jogo acaba quando o jogador derrubar todos os navios do oponente
         if navios_afundados == 10:
             print('Parabéns! Você derrubou todos os navios do seu oponente!')
             jogando = False

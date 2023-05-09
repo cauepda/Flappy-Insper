@@ -27,6 +27,7 @@ for embarcacao, qtde in dicionario_embarcacoes.items():
             if orientacao == 2:
                 orientacao = 'horizontal'
 
+            # loop para o usuário colocar a posição correta
             if posicao_valida(frota, linha, coluna, orientacao, qtde[1]) == False:
                 while posicao_valida(frota, linha, coluna, orientacao, qtde[1]) == False:
 

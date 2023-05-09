@@ -1,5 +1,9 @@
 from random import *
+
+# linha pedida n academia python
 seed(1)
+
+#------------- funções importadas ---------------------------------------
 def define_posicoes(linha, coluna, orientacao, tamanho):
     lista_ocupacao = []
     if orientacao == 'vertical':
@@ -108,6 +112,8 @@ def monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente):
         texto += f'{linha}| {jogador_info}|     {linha}| {oponente_info}|\n'
     return texto
 
+#------------------------------------------------------------------------------
+
 #------------------------ criando frota jogador ------------------------
 frota_jogador = {
     "porta-aviões":[],
@@ -212,6 +218,7 @@ jogando = True
 
 lista_ataques = []
 
+# começo do jogo
 while jogando:
     print(monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente))
 
@@ -283,5 +290,6 @@ while jogando:
 
             navios_afundados_jogador = afundados(frota_jogador, tabuleiro_jogador)
 
+            # o jogo só para quando algum dos jogadores ganhar
             if navios_afundados_jogador == 10:
                 print('Xi! O oponente derrubou toda a sua frota =(')
